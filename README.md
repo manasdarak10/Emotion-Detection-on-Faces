@@ -1,87 +1,83 @@
 # Emotion Detection on Faces
 
-Real-time emotion detection using facial expressions. This project captures webcam video, detects faces, and classifies the emotion for each face using a pre-trained Keras/TensorFlow model.
+A real-time facial emotion detection system using OpenCV and a pre-trained deep learning model. It captures video from your webcam, detects faces using Haar cascades, and predicts emotional expressions like Happy, Sad, Angry, etc.
 
 ## 🎯 Features
 
 - Real-time webcam video capture
 - Face detection using OpenCV Haar cascade
 - Emotion classification (e.g., Angry, Happy, Sad, etc.)
-- Display of bounding boxes and emotion labels on the video feed
+- Bounding box and emotion label overlay on live feed
 
-## 🗂️ Project Structure
+## 🧠 Technologies Used
+
+- Python 3
+- OpenCV (face detection and video stream)
+- Keras with TensorFlow backend (emotion prediction model)
+- Haar cascades for face detection
+- Pre-trained `.h5` model for emotion recognition
+
+## 📁 Project Structure
 
 ```
 Emotion-Detection-on-Faces/
-│
-├─ model/
-│   └─ best_model.h5                # Pre-trained emotion detection model
-│
-├─ haarcascade_frontalface_default.xml  # Haar cascade for face detection
-│
-├─ emotion_detection.py            # Main Python script
-│
-├─ requirements.txt                # Python dependencies
-│
-└─ README.md                       # Project documentation
+├── emotions.py                         # Main Python script for detection
+├── haarcascade_frontalface_default.xml # Haar cascade for face detection
+├── requirements.txt                    # Python dependencies
+└── README.md                           # Project documentation
 ```
 
-## 📋 Requirements
+> Note: If your model file (`best_model.h5`) is not yet uploaded or intentionally excluded, update this README accordingly once it's added.
 
-Install dependencies using pip:
+## 🔧 Setup Instructions
 
-```bash
-pip install -r requirements.txt
-```
+### 1. Clone the repository
 
-## 🚀 How to Run
-
-1. **Clone the repository**:
 ```bash
 git clone https://github.com/manasdarak10/Emotion-Detection-on-Faces.git
 cd Emotion-Detection-on-Faces
 ```
 
-2. **Install Python dependencies**:
+### 2. Install dependencies
+
+Make sure Python 3 is installed, then install the required packages:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Make sure the following files are present**:
-- `model/best_model.h5`
-- `haarcascade_frontalface_default.xml`
+### 3. Run the application
 
-4. **Run the application**:
 ```bash
-python emotion_detection.py
+python emotions.py
 ```
 
-5. **Controls**:
-- The webcam will open in a window.
-- Emotion labels will appear on detected faces.
-- Press `q` to quit the application.
+> Ensure that your webcam is connected and the Haar cascade file (`haarcascade_frontalface_default.xml`) is in the same directory as `emotions.py`.
 
-## 🛠️ How It Works
+## 💡 How It Works
 
-- The script uses OpenCV to access the webcam and detect faces in real-time.
-- Detected faces are cropped and preprocessed.
-- The pre-trained deep learning model (Keras/TensorFlow) classifies the emotion.
-- The result is displayed with bounding boxes and emotion labels on the video stream.
+1. Captures video feed from your webcam using OpenCV.
+2. Uses Haar cascades to detect faces in each frame.
+3. Extracts the face region, resizes it, and feeds it into a pre-trained emotion detection model.
+4. Displays the predicted emotion label on the video feed with a bounding box.
 
-## 💡 Future Improvements
+## ✅ requirements.txt
 
-- Add face recognition to identify specific individuals
-- Integrate a GUI using Tkinter or Streamlit
-- Log emotions with timestamps into a CSV or database
-- Extend support for video files and multiple camera inputs
+```txt
+opencv-python
+tensorflow
+keras
+numpy
+```
 
-## 📚 References
+## 📦 Future Enhancements
 
-- OpenCV documentation for face detection
-- Keras/TensorFlow for deep learning
-- FER-2013 dataset for emotion classification (common training dataset)
+- Improve emotion prediction accuracy with larger datasets
+- Add GUI for better usability
+- Extend model to detect multiple faces simultaneously
+- Deploy as a web app using Flask/Streamlit
 
-## 👤 Author
+## 👨‍💻 Author
 
 **Manas Darak**  
 GitHub: [https://github.com/manasdarak10](https://github.com/manasdarak10)
